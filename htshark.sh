@@ -15,7 +15,7 @@ do
 		last=$e
 	done
 	/c/Program\ Files/Wireshark/tshark.exe -Y udp -nr $entry -T fields -e frame.len | sort -n | uniq -c > distributions/$last.txt
-
+	/c/Program\ Files/Wireshark/tshark.exe -r $entry -q -z conv,udp > bitrates/$last-br.txt
 	echo $last
 
 

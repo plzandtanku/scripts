@@ -2,7 +2,7 @@ import os
 import sys
 
 myDir = None
-if (len(sys.argv) > 1):
+if (len(sys.argv) == 2):
     myDir = sys.argv[1]
    #if (len(sys.argv) < 2):
 #    print("ya burnt")
@@ -12,6 +12,9 @@ if (len(sys.argv) > 1):
 #dumpFile = "~/Documents/school/cs239/dump.txt"
 d = "dump.txt"
 
+if os.path.isfile(myDir):
+    d = myDir
+    myDir = None
 
 #cmdstring = "tshark -Y udp -nr " + fileName + " -T fields -e frame.len | sort -n | uniq -c > " + dumpFile
 def analyzeFile(dumpFile):
@@ -33,18 +36,25 @@ def readConv(fileName):
     f=open(fileName, "r")
     if f.mode == 'r':
         lines = f.read().splitlines()
-        for line in lines:
-            arr = line.split()
-            print(arr)
-readConv(d)
-sys.exit(1)
+        mainLine = lines[5]
+        mainLine = mainLine.split()
+        receivingB = int(mainLine[4])
+        sendingB = int(mainLine[6])
+        duration = float(mainLine[10])
+        rBr = (receivingB/duration) * 8
+        sBr = (sendingB/duration) * 8
+        print("Sending b/s=" + str(sBr))
+        print("Receiving b/s=" + str(rBr))
 if (myDir is None):
-    print("analyzing single file")
+    print("analyzing single file...")
     analyzeFile(d)
+    #readConv(d)
 else:
+    print("analyzing directory...")
     dic={"maxSize":0, "fileName":""}
     dic2={"mostP":0,"fileName":""}
     dic3={"minSize":-1,"fileName":""}
+    myDir += "/"
     for f in os.listdir(myDir):
         if (len(f.split(".")) > 1 and f.split(".")[len(f.split("."))-1] == 'txt'):
             fil=open(myDir+f, "r")
