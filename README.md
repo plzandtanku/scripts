@@ -5,13 +5,13 @@ place to save some code that I may need to reuse on another machine
 
 ### What do these scripts do?
 note: script names are WIP
+```
+randomizer.py - generates random data that looks like typical cloud scheduling jobs 
 
-**randomizer.py** - generates random data that looks like typical cloud scheduling jobs 
+htshark.sh and kowalski.py - scripts for processing Wireshark .pcapng files
 
-**htshark.sh and kowalski.py** - scripts for processing Wireshark .pcapng files
-
-**test.sh** - sandbox code
-
+test.sh - sandbox code
+```
 
 ### Why don't you have a better way of sharing files across machines?
 I don't own these machines and have limited privileges to setup file sharing
