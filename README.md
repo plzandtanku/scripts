@@ -13,16 +13,16 @@ note: script names are WIP
 **test.sh** - sandbox code
 
 ### Why don't you have a better way of sharing files across machines?
-I don't own these machines and have limited privileges to setup file sharing
+- I don't own these machines and have limited privileges to setup file sharing
 
 ### Google Drive? Or even just email the files?
-With git, at least I can version control the files more clearly. 
+- With git, at least I can version control the files more clearly. 
 
 ### Do you plan to actually reuse these scripts?
-I can dream, can't I?
+- I can dream, can't I?
 
 ### This repo, like many of your repos, seems quite...
-No more questions!
+- No more questions!
 
 ### ??
 ??
