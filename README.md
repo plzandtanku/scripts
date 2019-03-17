@@ -3,7 +3,7 @@ place to save some code that I may need to reuse on another machine
 
 # FAQ
 
-### what scripts can we find here?
+### What do these scripts do?
 note: script names are WIP
 
 **randomizer.py** - generates random data that looks like typical cloud scheduling jobs 
